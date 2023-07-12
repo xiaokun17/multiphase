@@ -1,0 +1,50 @@
+{
+    "sim_env":{
+        "global_part_size":0.04,
+        "global_dynamic_viscosity":1e-1,
+        "global_artificial_viscosity":0.5,
+        "sim_dim": 3,
+        "sim_space_lb": [-8, -8, -8],
+        "sim_space_rt": [8, 8, 8],
+        "gravity": [0, -9.8, 0],
+        "phase_num": 2,
+        "phase_rest_density": [50,200],
+        "phase_color_hex": ["0xFF0000","0x0000FF"]
+    },
+
+    "fluid":{
+        "max_part_num": 1e6,
+        "objs":[
+            {
+                "type":"ply",
+                "particle_relaxing_factor":1.001,
+                "vel": [0, 0, 0],
+                "file_name":"ply_models/hourglass_bottom_0.04.ply",
+                "volume_frac":[1,0],
+                "color":"0xFF0000"
+            },
+            {
+                "type":"ply",
+                "particle_relaxing_factor":1.001,
+                "vel": [0, 0, 0],
+                "file_name":"ply_models/hourglass_top_0.04.ply",
+                "volume_frac":[0,1],
+                "color":"0x0000FF"
+            }
+        ]
+    },
+
+    "bound":{
+        "max_part_num": 1e6,
+        "objs":  [
+            {
+                "type":"ply",
+                "vel": [0, 0, 0],
+                "particle_relaxing_factor":1.001,
+                "file_name":"ply_models/hourglass_houdini_0.024.ply",
+                "volume_frac":[0.5,0.5],
+                "color":"0xAAAAAA"
+            }
+        ]
+    }
+}

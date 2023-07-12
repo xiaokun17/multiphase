@@ -1,0 +1,56 @@
+{
+    "sim_env":{
+        "global_part_size":0.1,
+        "global_dynamic_viscosity":1e-1,
+        "sim_dim": 3,
+        "sim_space_lb": [-8, -8, -8],
+        "sim_space_rt": [8, 10, 8],
+        "gravity": [0, -9.8, 0],
+        "phase_num": 1,
+        "phase_rest_density": [100],
+        "phase_color_hex": ["0x6F7DBC"]
+    },
+    "fluid":{
+        "max_part_num": 1e6,
+        "objs":[
+            {
+                "type":"inlet",
+                "particle_relaxing_factor":1.001,
+                "start_time":0,
+                "end_time":5,
+                "center":[0,1,-1],
+                "size":[2,2],
+                "norm":[0,0,1],
+                "speed":2,
+                "volume_frac":[1],
+                "color":"0xFF0000"
+            },
+            {
+                "type":"inlet",
+                "start_time":5,
+                "end_time":30,
+                "particle_relaxing_factor":1.001,
+                "center":[0,5,0],
+                "size":[2,2],
+                "norm":[0,-1,-0.5],
+                "speed":3,
+                "volume_frac":[1],
+                "color":"0x0000FF"
+            }
+        ]
+    },
+
+    "bound":{
+        "max_part_num": 1e6,
+        "objs":  [
+            {
+                "type":"ply",
+                "vel": [0, 0, 0],
+                "particle_relaxing_factor":1.001,
+                "file_name":"ply_models\\cocktail_0.1.ply",
+                "volume_frac":[1],
+                "color":"0xAAAAAA"
+            }
+        ]
+    }
+}
